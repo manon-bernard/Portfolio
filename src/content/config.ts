@@ -11,10 +11,4 @@ export const collections = {
 			img_alt: z.string().optional(),
 		}),
 	}),
-	about: defineCollection({
-		schema: z.object({
-			title: z.string(),
-			description: z.string(),
-		}),
-	}),
 };

@@ -1,31 +1,29 @@
 ---
+// Collection
 import { getCollection } from 'astro:content';
+const projects = (await getCollection('work')).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
+// Components imports
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import ContactCTA from '../components/ContactCta.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
-import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 import Nav from '../components/Nav.astro';
 import PageTitle from '../components/PageTitle.astro';
-
-const projects = (await getCollection('work')).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 ---
 
 <BaseLayout
-  title="Mes Projets | Manon Bernard"
+  title="Portfolio Projets | Manon Bernard"
   description="Projets de développement Web - Manon Bernard">
-  <div class="pageTitle__container">
-    <Nav />
-    <PageTitle
-      title="Mes Projets"
-      tagline="Voici quelques uns des mes projets, terminés ou en cours de développement."
-    />
-  </div>
-
-  <main class="gallery">
-    <div class="pageContent__container">
+  <main>
+    <div class="page-title">
+      <Nav />
+      <PageTitle
+        title="Mes Projets"
+        tagline="Voici quelques uns des mes projets, terminés ou en cours de développement."
+      />
+    </div>
+    <div class="page-content">
       <Grid variant="offset">
         {
           projects.map((project) => (
@@ -39,13 +37,12 @@ const projects = (await getCollection('work')).sort((a, b) => b.data.publishDate
     <ContactCTA />
   </main>
 </BaseLayout>
- w
+
 <style>
-  .pageTitle__container {
+  .page-title {
     background-color: var(--black);
   }
-
-  .pageContent__container {
+  .page-content {
     padding: 2rem;
   }
 </style>

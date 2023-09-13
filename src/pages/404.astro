@@ -1,12 +1,15 @@
 ---
-import Hero from '../components/Hero.astro';
+// Components Imports
+import Nav from '../components/Nav.astro';
+import PageTitle from '../components/PageTitle.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Not Found"
   description="404 Error — this page was not found">
-  <Hero
+  <Nav />
+  <PageTitle
     title="Page Not Found"
     tagline="Not found"
   />

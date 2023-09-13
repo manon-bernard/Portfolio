@@ -1,5 +1,4 @@
 ---
-import CtaButton from './CtaButton.astro';
 interface Props {
   title: string;
   tagline?: string;
@@ -44,7 +43,6 @@ const { tagline, title } = Astro.props;
   @media (min-width: 50em) {
     .pageTitle {
       font-size: var(--text-xl);
-
       background: var(--medium-70) url('/assets/backgrounds/background.png');
     }
 

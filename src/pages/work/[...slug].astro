@@ -1,20 +1,20 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-
+// Collection
 import BaseLayout from '../../layouts/BaseLayout.astro';
-
 import ContactCta from '../../components/ContactCta.astro';
 import Nav from '../../components/Nav.astro';
 import PageTitle from '../../components/PageTitle.astro';
 import CtaButton from '../../components/CtaButton.astro';
 import Pill from '../../components/Pill.astro';
 
+// Components imports
+import { type CollectionEntry, getCollection } from 'astro:content';
+
 interface Props {
   entry: CollectionEntry<'work'>;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
   const work = await getCollection('work');
@@ -31,19 +31,17 @@ const { Content } = await entry.render();
 <BaseLayout
   title={entry.data.title}
   description={entry.data.description}>
-  <div class="pageTitle__container">
-    <Nav />
-    <PageTitle title={entry.data.title} />
-  </div>
-
   <main class="wrapper">
-    <div class="pageContent__container">
+    <div class="page-title">
+      <Nav />
+      <PageTitle title={entry.data.title} />
+    </div>
+    <div class="page-content">
       <CtaButton
         name="< Tous les projets"
         path="/work"
         style="secondary"
       />
-
       <div class="content">
         {
           entry.data.img && (
@@ -53,8 +51,8 @@ const { Content } = await entry.render();
             />
           )
         }
-        <div class="description content">{entry.data.description}</div>
-        <div class="details">
+        <div class="content">
+          <div class="content">{entry.data.description}</div>
           <div class="tags">
             {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
           </div>
@@ -70,25 +68,14 @@ const { Content } = await entry.render();
 </BaseLayout>
 
 <style>
-  .pageTitle__container {
+  .page-title {
     background-color: var(--black);
   }
-  .pageContent__container {
+  .page-content {
     padding: 2rem;
   }
-
   .back-link {
     display: none;
-  }
-
-  .details {
-    color: var(--black);
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
   }
 
   .tags {
@@ -107,11 +94,6 @@ const { Content } = await entry.render();
     .back-link {
       display: block;
       align-self: flex-start;
-    }
-
-    .details {
-      flex-direction: row;
-      gap: 2.5rem;
     }
   }
 </style>
