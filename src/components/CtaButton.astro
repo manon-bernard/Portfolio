@@ -1,0 +1,47 @@
+---
+interface Props {
+  name: string;
+  path: string;
+  style?: 'primary' | 'secondary';
+}
+
+const { name, path, style } = Astro.props;
+---
+
+<a
+  href={path}
+  class:list={[`button button--${style}`]}
+  >{name}</a
+>
+
+<style>
+  .button {
+    font-size: var(--text-base);
+    padding: 0.75em;
+    color: var(--medium);
+    border-radius: 50px;
+    white-space: nowrap;
+    font-family: var(--ff-accent);
+  }
+
+  .button--primary {
+    background-color: var(--accent);
+  }
+
+  .button--secondary {
+    background-color: var(--white);
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+
+  .button:hover,
+  .button:focus {
+    cursor: pointer;
+    background-color: var(--black);
+    color: var(--white);
+  }
+</style>

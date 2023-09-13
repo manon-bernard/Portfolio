@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCta.astro';
+import Hero from '../components/Hero.astro';
+import Nav from '../components/Nav.astro';
+import PageTitle from '../components/PageTitle.astro';
+---
+
+<BaseLayout
+  title="Portfolio | About"
+  description="Portfolio - Développeuse Web - Manon Bernard">
+  <div class="pageTitle__container">
+    <Nav />
+    <PageTitle
+      title="A propos"
+      tagline="Un peu de lecture pour en savoir plus sur moi, mon parcours."
+    />
+  </div>
+  <main>
+    <section>
+      <h2 class="section-title">Parcours</h2>
+      <div class="content">
+        <p>
+          Initialement formée dans le domaine agricole, j'ai fait mes premiers pas dans le secteur technologique en travaillant en tant que technicien en assistance informatique, spécialisé dans le
+          dépannage des produits Mac et iOS par téléphone.
+        </p>
+        <p>
+          Forte de cette expérience, j'ai entrepris une reconversion professionnelle dans le domaine du développement web, où j'ai découvert ma véritable passion pour l'univers technologique et la
+          résolution de problèmes.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h2 class="section-title">Formation</h2>
+      <div class="content">
+        <h3 class="section-subtitle">Titre professionnel : Développeur Web et Web Mobile</h3>
+        <p>Formé avec l'Ecole O'Clock, pour préparer le titre professionnel.</p>
+        <ul>
+          <li>Parcours de formation: Développeur Web et Web Mobile, Fullstack Javascript.</li>
+          <li>Parcours de spécialisation: React</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2 class="section-title">Compétences</h2>
+      <div class="content">
+        <h3>Languages</h3>
+        <ul>
+          <li>HTML, CSS, SCSS</li>
+          <li>Javascript</li>
+          <li>Typescript</li>
+        </ul>
+
+        <h3>Front-End</h3>
+        <ul>
+          <li>React (redux, react-router...)</li>
+          <li>Tailwind</li>
+          <li>En cours d'apprentissage: Astro, NextJS (SSR)</li>
+        </ul>
+
+        <h3>Back-End</h3>
+        <ul>
+          <li>Node + Express</li>
+          <li>Sequelize</li>
+          <li>PostgreSQL</li>
+          <li>API REST</li>
+          <li>JWT</li>
+          <li>En cours d'apprentissage: NestJS, MariaDB, Firebase, Fastify</li>
+        </ul>
+
+        <h3>Outils de développement</h3>
+        <ul>
+          <li>Git/Github</li>
+          <li>VsCode</li>
+          <li>Vite</li>
+          <li>esLint</li>
+          <li>Anglais technique (lu/écrit)</li>
+        </ul>
+
+        <h3>Soft-skills</h3>
+        <ul>
+          <li>Resolution de probléme</li>
+          <li>Ecoute active, patience</li>
+          <li>Rigueur, organisation</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <ContactCTA />
+
+  <style>
+    .pageTitle__container {
+      background-color: var(--black);
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: var(--text-xl);
+      color: var(--medium);
+      margin-block: 1.5rem;
+    }
+
+    .section-subtitle {
+      font-size: var(--text-md);
+      color: var(--medium-70);
+      margin-block: 1.5rem;
+    }
+
+    @media (min-width: 50em) {
+      main {
+        padding-inline: 25%;
+      }
+
+      section {
+        font-size: var(--text-lg);
+      }
+    }
+  </style>
+</BaseLayout>

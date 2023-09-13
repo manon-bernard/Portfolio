@@ -1,0 +1,30 @@
+---
+interface Props {
+  label: string;
+  url: string;
+}
+
+const { label, url } = Astro.props;
+---
+
+<a href={url}>
+  <img
+    aria-label={label}
+    class="social-icon"
+    src={`/assets/svg/${label}-icon.svg`}
+  />
+</a>
+
+<style>
+  .social-icon {
+    padding: 0.125rem;
+    background-color: var(--accent);
+    height: 45px;
+    width: 45px;
+  }
+
+  .social-icon:hover,
+  .social-icon:focus {
+    background-color: var(--white);
+  }
+</style>

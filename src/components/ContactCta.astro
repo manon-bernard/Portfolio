@@ -1,0 +1,48 @@
+---
+import CtaButton from './CtaButton.astro';
+---
+
+<aside>
+  <div>
+    <h2 class="tagline">Pour me contacter ?</h2>
+    <p class="tagline">C'est par ici.</p>
+  </div>
+
+  <CtaButton
+    name="Envoyer un message"
+    path="mailto:manon.bernard8907@gmail.com"
+    style="secondary"
+  />
+</aside>
+
+<style>
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 1.5rem;
+    background-color: var(--medium-70);
+  }
+
+  .tagline {
+    color: var(--white);
+    font-size: var(--text-xl);
+    text-align: center;
+    max-width: 25ch;
+  }
+
+  @media (min-width: 50em) {
+    aside {
+      padding: 7.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    h2 {
+      font-size: var(--text-3xl);
+      text-align: left;
+    }
+  }
+</style>

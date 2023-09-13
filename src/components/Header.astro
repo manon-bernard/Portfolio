@@ -1,0 +1,50 @@
+---
+import Hero from './Hero.astro';
+import Nav from './Nav.astro';
+import Socials from './Socials.astro';
+
+const socialLinks: { label: string; url: string }[] = [
+  { label: 'github', url: 'https://github.com/manon-bernard' },
+  { label: 'linkedin', url: 'https://www.linkedin.com/in/manon-bernard-mb/' },
+];
+---
+
+<header>
+  <Nav />
+  <Hero
+    prefix="Bonjour!"
+    prefixName="Je suis Manon Bernard"
+    title="Développeuse Web"
+    tagline="Fullstack Javascript"
+  />
+  <Socials />
+</header>
+
+<style>
+  header {
+    background: url('/assets/backgrounds/background-vertical.png');
+    background-color: var(--white);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 50em) {
+    header {
+      background: url('/assets/backgrounds/background.png');
+      background-size: cover;
+      background-position: center;
+    }
+  }
+</style>

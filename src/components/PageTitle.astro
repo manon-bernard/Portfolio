@@ -1,0 +1,59 @@
+---
+import CtaButton from './CtaButton.astro';
+interface Props {
+  title: string;
+  tagline?: string;
+}
+
+const { tagline, title } = Astro.props;
+---
+
+<div class="pageTitle">
+  <h1 class="pageTitle__title">{title}</h1>
+  <h2 class="pageTitle__title--secondary">{tagline}</h2>
+</div>
+
+<style>
+  .pageTitle {
+    background: var(--medium-70) url('/assets/backgrounds/background-vertical.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: exclusion;
+
+    width: 100%;
+    padding: 5vh 5vw;
+    backdrop-filter: blur(2px);
+  }
+
+  .pageTitle__title {
+    font-size: var(--text-3xl);
+    margin-block: 1.75rem;
+  }
+
+  .pageTitle__title--secondary {
+    font-size: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .pageTitle__title,
+  .pageTitle__title--secondary {
+    color: var(--white);
+    font-family: var(--ff-normal);
+  }
+
+  @media (min-width: 50em) {
+    .pageTitle {
+      font-size: var(--text-xl);
+
+      background: var(--medium-70) url('/assets/backgrounds/background.png');
+    }
+
+    .pageTitle-title--secondary {
+      font-size: var(--text-3xl);
+    }
+
+    .heropageTitle__title {
+      font-size: var(--text-5xl);
+    }
+  }
+</style>

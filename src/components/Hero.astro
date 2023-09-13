@@ -1,0 +1,79 @@
+---
+import CtaButton from './CtaButton.astro';
+interface Props {
+  title: string;
+  tagline: string;
+  prefix?: string;
+  prefixName?: string;
+}
+
+const { prefix, prefixName, tagline, title } = Astro.props;
+---
+
+<div
+  class="hero"
+  id="hero">
+  <p class="hero__prefix">{prefix}</p>
+  <p class="hero__prefix">{prefixName}</p>
+  <h1 class="hero__title">{title}</h1>
+  <h2 class="hero__title--secondary">{tagline}</h2>
+  <div class="cta">
+    <CtaButton
+      name="Voir mes projets"
+      path="/work"
+      style="primary"
+    />
+    <CtaButton
+      name="Me contacter"
+      style="secondary"
+      path="#contact"
+    />
+  </div>
+</div>
+
+<style>
+  .hero {
+    background-color: var(--black-50);
+    color: var(--white);
+    width: 100%;
+    padding: 5vh 5vw;
+    backdrop-filter: blur(2px);
+  }
+
+  .hero__title {
+    font-size: var(--text-3xl);
+    margin-block: 1.75rem;
+  }
+
+  .hero__title--secondary {
+    font-size: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero__title,
+  .hero__title--secondary {
+    color: inherit;
+    font-family: var(--ff-normal);
+  }
+
+  @media (min-width: 50em) {
+    .hero {
+      font-size: var(--text-xl);
+    }
+
+    .hero-title--secondary {
+      font-size: var(--text-3xl);
+    }
+
+    .hero__title {
+      font-size: var(--text-5xl);
+    }
+  }
+
+  .cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+</style>

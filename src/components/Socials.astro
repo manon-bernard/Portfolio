@@ -1,0 +1,33 @@
+---
+import SocialIcon from './SocialIcon.astro';
+const socialLinks: { label: string; url: string }[] = [
+  { label: 'github', url: 'https://github.com/manon-bernard' },
+  { label: 'linkedin', url: 'https://www.linkedin.com/in/manon-bernard-mb/' },
+];
+---
+
+<div class="social-icons">
+  <ul class="socials-links">
+    {
+      socialLinks.map(({ label, url }) => (
+        <li>
+          <SocialIcon
+            label={label}
+            url={url}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .social-icons {
+    margin: 1rem 5vw 0 auto;
+  }
+
+  .socials-links {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
