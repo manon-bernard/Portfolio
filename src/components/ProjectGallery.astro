@@ -50,6 +50,8 @@ const projects = (await getCollection('work')).sort((a, b) => b.data.publishDate
     .section {
       display: grid;
       gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .section-header {

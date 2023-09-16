@@ -8,7 +8,8 @@ import PageTitle from '../components/PageTitle.astro';
 
 <BaseLayout
   title="Portfolio About | Manon Bernard"
-  description="Portfolio - Développeuse Web - Manon Bernard">
+  description="Portfolio - Développeuse Web - Manon Bernard"
+>
   <main>
     <div class="page-title">
       <Nav />
@@ -112,9 +113,10 @@ import PageTitle from '../components/PageTitle.astro';
       margin-block: 1.5rem;
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 60em) {
       .page-content {
-        padding-inline: 25%;
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
       section {

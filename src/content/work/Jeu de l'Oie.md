@@ -1,7 +1,7 @@
 ---
 title: Jeu de l'Oie
 publishDate: 2023-06-01
-img: /assets/backgrounds/background.png
+img: /assets/backgrounds/background.webp
 img_alt: Capture d'écran du projet Jeu de l'Oie.
 description: |
   Projet personnel de développement d'un Jeu de l'Oie en Javascript.

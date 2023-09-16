@@ -13,7 +13,8 @@ const textLinks: { label: string; href: string }[] = [
     <!-- Home -->
     <a
       href="/"
-      class="site-title">
+      class="site-title"
+    >
       Manon Bernard
     </a>
 
@@ -22,7 +23,8 @@ const textLinks: { label: string; href: string }[] = [
       <template>
         <button
           aria-controls="navigation"
-          aria-expanded="false">
+          aria-expanded="false"
+        >
           <span class="sr-only">Menu</span>
           <img
             src="/assets/svg/burger-icon-white.svg"
@@ -45,7 +47,8 @@ const textLinks: { label: string; href: string }[] = [
   <div class="menu-nav">
     <div
       id="menu-content"
-      hidden>
+      hidden
+    >
       <ul class="nav-items">
         {
           textLinks.map(({ label, href }) => (
@@ -58,7 +61,8 @@ const textLinks: { label: string; href: string }[] = [
                     active: Astro.url.pathname === href || (href !== '/' && Astro.url.pathname.startsWith(href)),
                   },
                 ]}
-                href={href}>
+                href={href}
+              >
                 {label}
               </a>
             </li>
@@ -172,6 +176,8 @@ const textLinks: { label: string; href: string }[] = [
       align-items: center;
       padding: 2.5rem 2.5rem;
       gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .site-title {

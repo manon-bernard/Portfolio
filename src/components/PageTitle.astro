@@ -8,13 +8,15 @@ const { tagline, title } = Astro.props;
 ---
 
 <div class="pageTitle">
-  <h1 class="pageTitle__title">{title}</h1>
-  <h2 class="pageTitle__title--secondary">{tagline}</h2>
+  <div class="pageTitle__container">
+    <h1 class="pageTitle__title">{title}</h1>
+    <h2 class="pageTitle__title--secondary">{tagline}</h2>
+  </div>
 </div>
 
 <style>
   .pageTitle {
-    background: var(--medium-70) url('/assets/backgrounds/background-vertical.png');
+    background: var(--medium-70) url('/assets/backgrounds/background-vertical.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: exclusion;
@@ -27,6 +29,11 @@ const { tagline, title } = Astro.props;
   .pageTitle__title {
     font-size: var(--text-3xl);
     margin-block: 1.75rem;
+  }
+
+  .pageTitle__container {
+    margin: 0 auto;
+    max-width: 1200px;
   }
 
   .pageTitle__title--secondary {
@@ -43,7 +50,7 @@ const { tagline, title } = Astro.props;
   @media (min-width: 50em) {
     .pageTitle {
       font-size: var(--text-xl);
-      background: var(--medium-70) url('/assets/backgrounds/background.png');
+      background: var(--medium-70) url('/assets/backgrounds/background.webp');
       background-size: cover;
       background-repeat: no-repeat;
     }

@@ -12,7 +12,8 @@ const { prefix, prefixName, tagline, title } = Astro.props;
 
 <div
   class="hero"
-  id="hero">
+  id="hero"
+>
   <p class="hero__prefix">{prefix}</p>
   <p class="hero__prefix">{prefixName}</p>
   <h1 class="hero__title">{title}</h1>
@@ -38,6 +39,7 @@ const { prefix, prefixName, tagline, title } = Astro.props;
     width: 100%;
     padding: 5vh 5vw;
     backdrop-filter: blur(2px);
+    max-width: 1200px;
   }
 
   .hero__title {

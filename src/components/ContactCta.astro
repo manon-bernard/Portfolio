@@ -3,25 +3,22 @@ import CtaButton from './CtaButton.astro';
 ---
 
 <aside id="contact">
-  <div>
-    <h2 class="tagline">Pour me contacter ?</h2>
-    <p class="tagline">C'est par ici.</p>
-  </div>
+  <div class="contact-container">
+    <div>
+      <h2 class="tagline">Pour me contacter ?</h2>
+      <p class="tagline">C'est par ici.</p>
+    </div>
 
-  <CtaButton
-    name="Envoyer un message"
-    path="mailto:manon.bernard8907@gmail.com"
-    style="secondary"
-  />
+    <CtaButton
+      name="Envoyer un message"
+      path="mailto:manon.bernard8907@gmail.com"
+      style="secondary"
+    />
+  </div>
 </aside>
 
 <style>
   aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    padding: 5rem 1.5rem;
     background-color: var(--medium-70);
   }
 
@@ -32,17 +29,27 @@ import CtaButton from './CtaButton.astro';
     max-width: 25ch;
   }
 
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   @media (min-width: 50em) {
-    aside {
+    h2 {
+      font-size: var(--text-3xl);
+      text-align: left;
+    }
+
+    .contact-container {
       padding: 7.5rem;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
-    }
-
-    h2 {
-      font-size: var(--text-3xl);
-      text-align: left;
     }
   }
 </style>
