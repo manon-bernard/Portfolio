@@ -30,7 +30,8 @@ const { Content } = await entry.render();
 
 <BaseLayout
   title={entry.data.title}
-  description={entry.data.description}>
+  description={entry.data.description}
+>
   <main class="wrapper">
     <div class="page-title">
       <Nav />
@@ -59,6 +60,18 @@ const { Content } = await entry.render();
         </div>
         <div class="content">
           <Content />
+        </div>
+        <div class="links">
+          <a
+            href={entry.data.url}
+            class="website"
+            >Voir le site</a
+          >
+          <a
+            href={entry.data.git}
+            class="github"
+            >Voir le code</a
+          >
         </div>
       </div>
     </div>
@@ -95,5 +108,10 @@ const { Content } = await entry.render();
       display: block;
       align-self: flex-start;
     }
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-evenly;
   }
 </style>
