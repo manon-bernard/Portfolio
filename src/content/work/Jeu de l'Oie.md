@@ -1,7 +1,7 @@
 ---
 title: Jeu de l'Oie
 publishDate: 2023-06-01
-img: /assets/backgrounds/background.webp
+img: /assets/work_images/oie.webp
 img_alt: Capture d'écran du projet Jeu de l'Oie.
 description: |
   Projet personnel de développement d'un Jeu de l'Oie en Javascript.
@@ -13,6 +13,9 @@ tags:
   - POO
   - "2023"
   - Projet solo
+url: https://oie-alpha.vercel.app/
+git: https://github.com/manon-bernard/oie
+
 ---
 
 ## Objectif du projet
@@ -36,15 +39,9 @@ Challenge personnel:
 - Lancement de dés.
 - Déplacement des pions sur le plateau.
 - Gestion du tour par tour.
-- Affichage des regles du jeu.
+- Affichage des régles du jeu.
 
 ## Technologies
 
-### Front-End
+- Javascript Vanilla
 
-- Javascript
-
-### Outils de développement
-
-- VsCode
-- Git/GitHub
