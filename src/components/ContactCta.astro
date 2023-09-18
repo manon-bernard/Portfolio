@@ -9,11 +9,19 @@ import CtaButton from './CtaButton.astro';
       <p class="tagline">C'est par ici.</p>
     </div>
 
-    <CtaButton
-      name="Linkedin"
-      path="https://www.linkedin.com/in/manon-bernard-mb/"
-      style="secondary"
-    />
+    <div class="button-container">
+      <CtaButton
+        name="Linkedin"
+        path="https://www.linkedin.com/in/manon-bernard-mb/"
+        style="secondary"
+      />
+
+      <CtaButton
+        name="Message"
+        path="mailto:manon.bernard8907@gmail.com"
+        style="secondary"
+      />
+    </div>
   </div>
 </aside>
 
@@ -34,9 +42,18 @@ import CtaButton from './CtaButton.astro';
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    padding: 5rem 1.5rem;
+    padding: 3rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .button-container {
+    text-align: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   @media (min-width: 50em) {
@@ -50,6 +67,16 @@ import CtaButton from './CtaButton.astro';
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+    }
+
+    .button-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>
