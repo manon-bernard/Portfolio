@@ -22,29 +22,29 @@ const { tagline, title } = Astro.props;
     background-blend-mode: exclusion;
 
     width: 100%;
-    padding: 5vh 5vw;
+    padding: 2rem;
     backdrop-filter: blur(2px);
   }
 
   .pageTitle__title {
     font-size: var(--text-3xl);
-    margin-block: 1.75rem;
   }
 
   .pageTitle__container {
     margin: 0 auto;
+    padding: 2rem;
     max-width: 1200px;
   }
 
   .pageTitle__title--secondary {
     font-size: 1.75rem;
-    margin-bottom: 1.75rem;
   }
 
   .pageTitle__title,
   .pageTitle__title--secondary {
     color: var(--white);
     font-family: var(--ff-normal);
+    padding-top: 0;
   }
 
   @media (min-width: 50em) {

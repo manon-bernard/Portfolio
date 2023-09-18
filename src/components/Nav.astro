@@ -131,18 +131,18 @@ const textLinks: { label: string; href: string }[] = [
 
   nav button {
     border: none;
-    width: 5rem;
+    /* width: 5rem; */
     background-color: transparent;
   }
 
   .menu-header {
-    height: 3rem;
+    height: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .site-title {
@@ -170,14 +170,18 @@ const textLinks: { label: string; href: string }[] = [
 
   @media (min-width: 50em) {
     nav {
+      max-width: 1200px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
-      padding: 2.5rem 2.5rem;
+      align-items: baseline;
+      padding-block: 2.5rem;
       gap: 1rem;
-      max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .menu-header {
+      padding: 1.5rem;
     }
 
     .site-title {
@@ -187,7 +191,7 @@ const textLinks: { label: string; href: string }[] = [
     .nav-items {
       flex-direction: row;
       font-size: var(--text-md);
-      padding: 0.5rem 0.5625rem;
+      padding: 1rem;
       background: transparent;
       backdrop-filter: none;
       box-shadow: none;
