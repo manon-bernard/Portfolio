@@ -13,77 +13,78 @@ import PageTitle from '../components/PageTitle.astro';
   <main>
     <div class="page-title">
       <Nav />
-      <PageTitle
-        title="A propos"
-        tagline="Un peu de lecture pour en savoir plus sur moi, mon parcours."
-      />
+      <PageTitle title="A propos" />
     </div>
     <div class="page-content">
       <section>
-        <h2 class="section-title">Parcours</h2>
-        <div class="content">
-          <p>
-            Initialement formée dans le domaine agricole, j'ai fait mes premiers pas dans le secteur technologique en travaillant en tant que technicien en assistance informatique, spécialisé dans le
-            dépannage des produits Mac et iOS par téléphone.
-          </p>
-          <p>
-            Forte de cette expérience, j'ai entrepris une reconversion professionnelle dans le domaine du développement web, où j'ai découvert ma véritable passion pour l'univers technologique et la
-            résolution de problèmes.
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Formation</h2>
-        <div class="content">
-          <h3 class="section-subtitle">Titre professionnel : Développeur Web et Web Mobile</h3>
-          <p>Formé avec l'Ecole O'Clock, pour préparer le titre professionnel.</p>
-          <ul>
-            <li>Parcours de formation: Développeur Web et Web Mobile, Fullstack Javascript.</li>
-            <li>Parcours de spécialisation: React</li>
-          </ul>
-        </div>
+        <section>
+          <h2 class="section-title">Formation</h2>
+          <div class="content">
+            <h3 class="section-subtitle">Titre professionnel : Développeur Web et Web Mobile</h3>
+            <ul>
+              <li>Développeur Web et Web Mobile, Fullstack Javascript.</li>
+              <li>Parcours de spécialisation: React</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2 class="section-title">Expérience</h2>
+          <div class="content">
+            <h3 class="section-subtitle">Développeur Web Fullstack SIG</h3>
+            <h4>Stack technique</h4>
+            <ul>
+              <li>Angular 17+, Typescript, SCSS</li>
+              <li>NestJS, TypeORM</li>
+              <li>OpenLayers</li>
+              <li>Material Design</li>
+              <li>Docker</li>
+              <li>Linux</li>
+            </ul>
+            <h4>Projets</h4>
+            <p>Application web de cartographie, logiciel d'informations géographiques (SIG)</p>
+            <ul>
+              <li>Module "Consultation des données parcellaires (cadastre)"</li>
+              <li>Module "Bibliothèque de fichiers"</li>
+            </ul>
+          </div>
+        </section>
       </section>
       <section>
         <h2 class="section-title">Compétences</h2>
         <div class="content">
-          <h3>Languages</h3>
-          <ul>
-            <li>HTML, CSS, SCSS</li>
-            <li>Javascript</li>
-            <li>Typescript</li>
-          </ul>
-
           <h3>Front-End</h3>
           <ul>
-            <li>React (redux, react-router...)</li>
-            <li>Tailwind</li>
-            <li>En cours d'apprentissage: Astro, NextJS</li>
+            <li>HTML, CSS, SCSS</li>
+            <li>Javascript, TypeScript</li>
+            <li>Angular (17+), RxJS</li>
+            <li>React, Redux, RTK, react-router</li>
+            <li>Material Design, Angular Material, Tailwind CSS</li>
+            <li>Astro</li>
           </ul>
 
           <h3>Back-End</h3>
           <ul>
-            <li>Node + Express</li>
-            <li>Sequelize</li>
-            <li>PostgreSQL</li>
+            <li>Node.js</li>
+            <li>NestJS, Express.js</li>
+            <li>TypeORM, Sequelize</li>
+            <li>PostgreSQL, SQL</li>
             <li>API REST</li>
-            <li>JWT</li>
-            <li>En cours d'apprentissage: NestJS, MariaDB, Firebase, Fastify</li>
+          </ul>
+
+          <h3>SIG</h3>
+          <ul>
+            <li>OpenLayers, Leaflet</li>
+            <li>PostgreSQL avec PostGIS</li>
+            <li>Geoserver</li>
           </ul>
 
           <h3>Outils de développement</h3>
           <ul>
-            <li>Git/Github</li>
+            <li>Git/Github/GitLab/npm</li>
             <li>VsCode</li>
             <li>Vite</li>
             <li>esLint</li>
             <li>Anglais technique (lu/écrit)</li>
-          </ul>
-
-          <h3>Soft-skills</h3>
-          <ul>
-            <li>Resolution de probléme</li>
-            <li>Ecoute active, patience</li>
-            <li>Rigueur, organisation</li>
           </ul>
         </div>
       </section>
@@ -98,19 +99,38 @@ import PageTitle from '../components/PageTitle.astro';
     }
 
     .page-content {
-      padding: 2rem;
+      padding-inline: 2rem;
+      padding-block: 0;
+      padding-bottom: 2rem;
     }
 
     .section-title {
       font-size: var(--text-xl);
       color: var(--medium);
-      margin-block: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding: 0;
     }
 
     .section-subtitle {
       font-size: var(--text-md);
       color: var(--medium-70);
       margin-block: 1.5rem;
+      padding-block: 0;
+    }
+
+    ul,
+    li {
+      font-size: var(--text-md);
+    }
+
+    h3,
+    h4 {
+      padding-block: 0;
+      padding-top: 0.25rem;
+    }
+
+    .content {
     }
 
     @media (min-width: 60em) {
